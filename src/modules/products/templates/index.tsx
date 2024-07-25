@@ -29,6 +29,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
 
   return (
     <>
+      <h1> ===============  This 'Details View' will be adjusted, according to this ticket: https://www.notion.so/e13/Product-Details-page-22557340958c44539e3eee8af808d0c6 =============== </h1>
       <div
         className="content-container flex flex-col small:flex-row small:items-start py-6 relative"
         data-testid="product-container"
