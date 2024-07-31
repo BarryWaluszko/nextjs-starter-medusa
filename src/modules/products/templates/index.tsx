@@ -41,7 +41,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
             
             <div className="border border-xx-default border-x-0 border-b-0 font-normal font-sans txt-medium text-ui-fg-subtle">
               <div className="flex items-center ">
-                <span className="p-6 text-blue-600 font-semibold mr-4 border border-xx-default border-y-0 border-l-0">"IMG" Business Automated</span>
+                <span className="p-6 text-blue-600 font-semibold mr-4 border border-xx-default border-y-0 border-l-0">IMG Business Automated</span>
                 <div className="p-6 flex items-center ">
                   <span className="text-yellow-400">★★★★★</span>
                   <span className="ml-1 text-sm">20 ratings</span>
