@@ -61,7 +61,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
           </div>
 
           {/* right slim column */}
-          <div className="col-span-1 border border-xx-default border-y-0 border-r-0">
+          <div className="col-span-1 border border-xx-default border-y-0 border-r-0 border-l-0 small:border-l">
 
             {/* Airtable Base and Make blueprints  */}
             <div className="p-6">
