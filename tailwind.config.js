@@ -23,6 +23,10 @@ module.exports = {
       colors: {
         xx: {
           default: "black",
+          pink: "#FF90E8",
+          blue: {
+            0: "#90A8ED",
+          },
         },
         grey: {
           0: "#FFFFFF",
