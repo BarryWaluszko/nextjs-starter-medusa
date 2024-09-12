@@ -114,7 +114,24 @@
     @apply p-2 bg-white rounded-full border-black border;
   }
 
-  .panel-shadow {
-    @apply hover:shadow-lg hover:shadow-black transition-shadow;
+  .box-shadow {
+    box-shadow: black 5px 5px;
+  }
+
+  .box-sales-number {
+    background-color: rgb(144, 168, 237, 0.2);
+    border-color: rgb(144, 168, 237);
+  }
+
+  .box-add-shadow {
+    cursor: pointer;
+    transition-timing-function: ease-out;
+    transition-duration: 200ms;
+    transition-property: transform;
+  }
+
+  .box-add-shadow:hover {
+    transform: translate(-0.5rem, -0.25rem);
+    box-shadow: 0.25rem 0.25rem 0rem rgb(0 0 0);
   }
 }

@@ -80,7 +80,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
           <div className="col-span-1 border border-xx-default small:border-y-0 border-r-0 border-l-0 small:border-l">
             {/* Airtable Base and Make blueprints  */}
             <div className="p-6">
-              <div className="bg-gray-100 p-4 rounded mb-4 shadow-lg shadow-black cursor-pointer flex flex-row">
+              <div className="bg-gray-100 p-4 rounded mb-4  border border-black cursor-pointer flex flex-row box-shadow">
                 <div>
                   <button className="badge-price">$40+</button>
                 </div>
@@ -102,7 +102,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
 
             {/* Airtable Base only */}
             <div className="p-6 pt-0">
-              <div className="p-4 rounded  border border-black flex flex-row panel-shadow">
+              <div className="p-4 rounded  border border-black flex flex-row box-add-shadow">
                 <div>
                   <button className="badge-price">$40+</button>
                 </div>
@@ -126,39 +126,42 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
             </div>
 
             {/* Add to cart button */}
-            <div className="p-6 pt-0 ">
-              <button className="w-full bg-xx-pink text-black py-2 rounded mb-1 panel-shadow border border-black">
+            <div className="p-6 pt-0">
+              <button className="w-full py-3 mb-1 bg-xx-pink text-black  rounded  border border-black box-add-shadow">
                 Add to cart
               </button>
             </div>
 
             {/* number of sales */}
             <div className=" px-6">
-              <p className="py-2 border border-blue-800 bg-xx-blue-0 w-full ">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  className="w-5 size-6 inline mx-2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
-                  />
-                </svg>
+              <p className="w-full flex p-3 border box-sales-number">
+                {
+                  <svg
+                    className="w-7 h-7 pr-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 2.02c-5.524 0-10 4.477-10 10s4.476 10 10 10c5.522 0 10-4.477 10-10s-4.478-10-10-10Zm0 5a1 1 0 1 1-.001 2 1 1 0 0 1 0-2Zm0 3a1 1 0 0 1 1 1v5a1 1 0 0 1-2 0v-5a1 1 0 0 1 1-1Z"
+                      fill="#90A8ED"
+                    />
+                  </svg>
+                }
                 <span className="font-bold">1,151</span> sales
               </p>
             </div>
 
             {/* 30-day money back */}
-            <div className="flex items-center justify-center">
+            <div className="py-4 flex items-center justify-center">
               <span className="underline cursor-pointer">
                 30-day money back guarantee
               </span>
             </div>
+          </div>
+
+          {/* wish list */}
+          <div>
+            <div>Combo box</div>
+            <div>Cypy url</div>
           </div>
         </div>
       </div>
