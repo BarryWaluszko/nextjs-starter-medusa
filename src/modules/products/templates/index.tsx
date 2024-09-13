@@ -11,7 +11,7 @@ import ProductInfo from "@modules/products/templates/product-info"
 import SkeletonRelatedProducts from "@modules/skeletons/templates/skeleton-related-products"
 import { notFound } from "next/navigation"
 import ProductActionsWrapper from "./product-actions-wrapper"
-import { Heading, Text } from "@medusajs/ui"
+import { Heading, Text, CurrencyInput } from "@medusajs/ui"
 
 type ProductTemplateProps = {
   product: PricedProduct
@@ -115,14 +115,15 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
             {/* fair price */}
             <div className="p-6 pt-0">
               Name a fair price:
-              <div className="flex border border-black p-1">
+              <CurrencyInput symbol="$" code="usd" />
+              {/* <div className="flex border border-black p-1">
                 <button className="badge-price w-10 ml-3">$</button>
                 <input
                   type="number"
                   className="ml-3  focus:outline-none"
                   placeholder="10+"
                 />
-              </div>
+              </div> */}
             </div>
 
             {/* Add to cart button */}
@@ -156,12 +157,6 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
                 30-day money back guarantee
               </span>
             </div>
-          </div>
-
-          {/* wish list */}
-          <div>
-            <div>Combo box</div>
-            <div>Cypy url</div>
           </div>
         </div>
       </div>
