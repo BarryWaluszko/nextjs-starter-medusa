@@ -11,6 +11,7 @@ import ProductInfo from "@modules/products/templates/product-info"
 import SkeletonRelatedProducts from "@modules/skeletons/templates/skeleton-related-products"
 import { notFound } from "next/navigation"
 import ProductActionsWrapper from "./product-actions-wrapper"
+import { Heading, Text, CurrencyInput } from "@medusajs/ui"
 
 type ProductTemplateProps = {
   product: PricedProduct
@@ -29,7 +30,138 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
 
   return (
     <>
-      <div
+      <div className="my-10 mx-16 rounded-md border-collapse border border-xx-default">
+        <div className="border border-xx-default border-x-0 border-t-0">
+          <ImageGallery images={product?.images || []} />
+        </div>
+        <div className="grid grid-cols-1 small:grid-cols-3">
+          {/* left wide column */}
+          <div className="col-span-2">
+            <div className="p-6">
+              <Heading
+                level="h2"
+                className="text-3xl leading-10 text-ui-fg-base"
+                data-testid="product-title"
+              >
+                {product.title}
+              </Heading>
+            </div>
+
+            <div className="border border-xx-default border-x-0 border-b-0 font-normal font-sans txt-medium text-ui-fg-subtle">
+              <div className="flex items-center ">
+                <span className="p-6 text-blue-600 font-semibold mr-4 border border-xx-default border-y-0 border-l-0">
+                  IMG Business Automated
+                </span>
+                <div className="p-6 flex items-center ">
+                  <span className="text-yellow-400">★★★★★</span>
+                  <span className="ml-1 text-sm">20 ratings</span>
+                </div>
+              </div>
+
+              <div className="">
+                {/* Description goes below */}
+                <Text
+                  className="p-6  border border-xx-default border-x-0 border-b-0"
+                  data-testid="product-description"
+                >
+                  {product.description}
+                </Text>
+                <div className="p-6">
+                  <span>See our other products on E13 Marketplace</span>
+                  <button className="p-3 bg-black text-white rounded ml-3">
+                    View products
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* right slim column */}
+          <div className="col-span-1 border border-xx-default small:border-y-0 border-r-0 border-l-0 small:border-l">
+            {/* Airtable Base and Make blueprints  */}
+            <div className="p-6">
+              <div className="bg-gray-100 p-4 rounded mb-4  border border-black cursor-pointer flex flex-row box-shadow">
+                <div>
+                  <button className="badge-price">$40+</button>
+                </div>
+                <div className="ml-4">
+                  <h3 className="font-bold mb-2">
+                    Airtable Base and Make blueprints
+                  </h3>
+                  <ul className="text-sm list-disc list-inside">
+                    <li>Airtable base</li>
+                    <li>
+                      Make scenario blueprint using Airtable with GPT4 /
+                      GPT3.5-turbo
+                    </li>
+                    <li>Additional instructions</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Airtable Base only */}
+            <div className="p-6 pt-0">
+              <div className="p-4 rounded  border border-black flex flex-row box-add-shadow">
+                <div>
+                  <button className="badge-price">$40+</button>
+                </div>
+                <div className="ml-4">
+                  <h3 className="font-bold mb-2">Airtable Base only</h3>
+                </div>
+              </div>
+            </div>
+
+            {/* fair price */}
+            <div className="p-6 pt-0">
+              Name a fair price:
+              <CurrencyInput symbol="$" code="usd" />
+              {/* <div className="flex border border-black p-1">
+                <button className="badge-price w-10 ml-3">$</button>
+                <input
+                  type="number"
+                  className="ml-3  focus:outline-none"
+                  placeholder="10+"
+                />
+              </div> */}
+            </div>
+
+            {/* Add to cart button */}
+            <div className="p-6 pt-0">
+              <button className="w-full py-3 mb-1 bg-xx-pink text-black  rounded  border border-black box-add-shadow">
+                Add to cart
+              </button>
+            </div>
+
+            {/* number of sales */}
+            <div className=" px-6">
+              <p className="w-full flex p-3 border box-sales-number">
+                {
+                  <svg
+                    className="w-7 h-7 pr-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 2.02c-5.524 0-10 4.477-10 10s4.476 10 10 10c5.522 0 10-4.477 10-10s-4.478-10-10-10Zm0 5a1 1 0 1 1-.001 2 1 1 0 0 1 0-2Zm0 3a1 1 0 0 1 1 1v5a1 1 0 0 1-2 0v-5a1 1 0 0 1 1-1Z"
+                      fill="#90A8ED"
+                    />
+                  </svg>
+                }
+                <span className="font-bold">1,151</span> sales
+              </p>
+            </div>
+
+            {/* 30-day money back */}
+            <div className="py-4 flex items-center justify-center">
+              <span className="underline cursor-pointer">
+                30-day money back guarantee
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* <div
         className="content-container flex flex-col small:flex-row small:items-start py-6 relative"
         data-testid="product-container"
       >
@@ -54,7 +186,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
             <ProductActionsWrapper id={product.id} region={region} />
           </Suspense>
         </div>
-      </div>
+      </div> */}
       <div
         className="content-container my-16 small:my-32"
         data-testid="related-products-container"
